@@ -11,9 +11,7 @@
 | first_name         | string     | null: false |
 | kana_family_name   | string     | null: false |
 | kana_first_name    | string     | null: false |
-| year_id            | string     | null: false |
-| month_id           | string     | null: false |
-| day_id             | string     | null: false |
+| birthday           | date       | null: false |
 
 has_many :items
 has_many :orders
@@ -24,10 +22,11 @@ has_many :orders
 | ------------------ | ---------- | ----------- |
 | title              | string     | null: false |
 | text               | text       | null: false |
-| category_id        | string     | null: false |
-| condition_id       | string     | null: false |
-| delivery_charge_id | string     | null: false |
-| area_id            | string     | null: false |
+| category_id        | integer    | null: false |
+| condition_id       | integer    | null: false |
+| delivery_charge_id | integer    | null: false |
+| area_id            | integer    | null: false |
+| days_to_ship_id    | integer    | null: false |
 | price              | integer    | null: false |
 | user               | references | null: false, foreign_key: true |
 
@@ -50,10 +49,11 @@ has_one :addresse
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
 | postal_code        | string     | null: false |
-| japan_area_id      | integer    | null: false |
+| area_id            | integer    | null: false |
 | city               | string     | null: false |
 | house_number       | string     | null: false |
 | building_name      | string     |
-| order              | references | null: false, foreign_key: true |
+| nickname           | string     | null: false |
+| phone_number       | references | null: false, foreign_key: true |
 
 belongs_to :order
