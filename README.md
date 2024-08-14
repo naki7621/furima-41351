@@ -42,7 +42,7 @@ has_one :order
 
 belongs_to :user
 belongs_to :item
-has_one :addresse
+has_one :address
 
 ##addressesテーブル
 
@@ -53,7 +53,7 @@ has_one :addresse
 | city               | string     | null: false |
 | house_number       | string     | null: false |
 | building_name      | string     |
-| nickname           | string     | null: false |
-| phone_number       | references | null: false, foreign_key: true |
+| phone_number           | string     | null: false |
+| order              | references | null: false, foreign_key: true |
 
 belongs_to :order
