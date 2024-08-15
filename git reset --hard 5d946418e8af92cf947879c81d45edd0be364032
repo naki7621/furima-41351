@@ -1,0 +1,80 @@
+[33mcommit 5d946418e8af92cf947879c81d45edd0be364032[m[33m ([m[1;36mHEAD -> [m[1;32mUser_Management[m[33m)[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 17:36:23 2024 +0900
+
+    必要なファイルを移動
+
+[33mcommit f328ffb6c102aec760607dfcb2b69e4bb0db90a5[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 17:14:33 2024 +0900
+
+    マイグレーションを実行
+
+[33mcommit 3bfab156360cd03e3df5618112be399c28e8e716[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: c6048aa de9b7ae
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 16:50:38 2024 +0900
+
+    Merge pull request #16 from naki7621/1st-branch
+    
+    データベースの設計
+
+[33mcommit de9b7ae29c05b559fea989871a2c729ace6d775a[m[33m ([m[1;32m1st-branch[m[33m)[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 16:45:28 2024 +0900
+
+    revision_ver4
+
+[33mcommit a4979a232dfb7a6e5cb2a0bd7e6a332a5550d7b9[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 16:24:51 2024 +0900
+
+    revision_ver3
+
+[33mcommit 05f99245770abdf9e5d589bcf64a21972b03b072[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 15:17:22 2024 +0900
+
+    revision_ver2
+
+[33mcommit 0aa065c930384e0866683cfc91f4c7b3e3f5f172[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Wed Aug 14 12:17:39 2024 +0900
+
+    revision_ver1
+
+[33mcommit a26f6484df615901d6a7b68b1af7b4b15fcebce4[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Tue Aug 13 21:18:14 2024 +0900
+
+    データベース設計
+
+[33mcommit c6048aa91a78b02f979e0194a0ad2beb9e5c5c88[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Tue Aug 13 15:46:05 2024 +0900
+
+    Basic認証
+
+[33mcommit 34ac069950e0a9bd1bf036ff4d250515bf3459a2[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Tue Aug 13 14:56:08 2024 +0900
+
+    deploy
+
+[33mcommit 5b6674e5e2ed698b27969058e685aa468d7643d4[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Tue Aug 13 14:31:59 2024 +0900
+
+    デプロイ
+
+[33mcommit 780a7beb54909b311a1752ca79766620125b63c4[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Tue Aug 13 14:24:29 2024 +0900
+
+    準備フェーズ完了
+
+[33mcommit 8cd665a278a7ae6da19cb700e4a52e3637fea08a[m
+Author: naki7621 <007beaaaar@gmail.com>
+Date:   Mon Aug 12 15:31:14 2024 +0900
+
+    first commit
