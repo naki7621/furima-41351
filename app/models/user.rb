@@ -5,19 +5,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   validates :nickname, presence: true
-  validates :password_confirmation, presence: true
-  validates :family_name, presence: true
-  validates :first_name, presence: true
-  validates :kana_family_name, presence: true
-  validates :kana_first_name, presence: true
+  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龯々〆〤ー]+\z/, message: 'は全角文字を使用しよう' }
+  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龯々〆〤ー]+\z/, message: 'は全角文字を使用しよう' }
+  validates :kana_family_name, presence: true, format: { with: /\A[ァ-ヴー]+\z/, message: 'は全角カタカナを使用しよう' }
+  validates :kana_first_name, presence: true, format: { with: /\A[ァ-ヴー]+\z/, message: 'は全角カタカナを使用しよう' }
   validates :birthday, presence: true
 
   validate :password_number
 
   private
   def password_number
-    if password.present? && !password.match(/\d/)
-      errors.add(:password, 'は少なくとも1つの数字を含める必要があります')
+    unless password.match(/[a-zA-Z]/) && password.match(/\d/)
+      errors.add(:password, 'は少なくとも1つの英字と1つの数字を含める必要があります')
     end
   end
 end
