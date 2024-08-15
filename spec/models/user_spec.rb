@@ -26,6 +26,11 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+    it 'パスワードが数字を含まない場合、登録できないこと' do
+      user = User.new(nickname: 'test', email: 'test@example.com', password: 'password', password_confirmation: 'password', family_name: 'テスト', first_name: 'テスト', kana_family_name: 'テスト', kana_first_name: 'テスト', birthday: '2000-01-01')
+      user.valid?
+      expect(user.errors.full_messages).to include('Password は少なくとも1つの数字を含める必要があります')
+    end
     it '苗字が空では登録できない' do
       user = User.new(nickname: 'test', email: 'test@example', password: '000000', password_confirmation: '000000', family_name: '', first_name: 'テスト2', kana_family_name: 'テスト', kana_first_name: 'テスト2', 
       birthday: '1999-01-01')

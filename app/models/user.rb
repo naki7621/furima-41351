@@ -11,4 +11,13 @@ class User < ApplicationRecord
   validates :kana_family_name, presence: true
   validates :kana_first_name, presence: true
   validates :birthday, presence: true
+
+  validate :password_number
+
+  private
+  def password_number
+    if password.present? && !password.match(/\d/)
+      errors.add(:password, 'は少なくとも1つの数字を含める必要があります')
+    end
+  end
 end
