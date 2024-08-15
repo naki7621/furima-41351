@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   validates :nickname, presence: true
-  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龯々〆〤ー]+\z/, message: 'は全角文字を使用しよう' }
-  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龯々〆〤ー]+\z/, message: 'は全角文字を使用しよう' }
+  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角文字を使用しよう' }
+  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角文字を使用しよう' }
   validates :kana_family_name, presence: true, format: { with: /\A[ァ-ヴー]+\z/, message: 'は全角カタカナを使用しよう' }
   validates :kana_first_name, presence: true, format: { with: /\A[ァ-ヴー]+\z/, message: 'は全角カタカナを使用しよう' }
   validates :birthday, presence: true
