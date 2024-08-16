@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to :days_to_ship
   belongs_to :delivery_charge
   belongs_to :area
+  has_one_attached :image
 
   validates :title, presence: true
   validates :text, presence: true
