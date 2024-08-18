@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :move_to_index, except: [:index]
 
   def index
     @items = Item.order("created_at DESC")
@@ -24,4 +25,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :title, :text, :category_id, :condition_id, :delivery_charge_id, :area_id, :days_to_ship_id, :price)
   end
 
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
 end
