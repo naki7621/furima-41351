@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :user_id, :item_id, :postal_code, :area_id, :city, :house_number, :building_name, :phone_number
 
   validates :postal_code, presence: true
-  validates :area_id, presence: true
+  validates :area_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :city, presence: true
   validates :house_number, presence: true
   validates :phone_number, presence: true
