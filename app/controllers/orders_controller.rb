@@ -1,9 +1,15 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item, only: [:index, :create, :show]
 
   def index
-    @order_address = OrderAddress.new
+    if user_signed_in? && (@item.sold_out? || @item.user_id == current_user.id)
+      redirect_to root_path
+    elsif !user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @order_address = OrderAddress.new
+    end
   end
 
   def create
@@ -13,6 +19,12 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       render :index, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    if @item.sold_out? || @item.user_id == current_user.id
+      redirect_to root_path
     end
   end
 
