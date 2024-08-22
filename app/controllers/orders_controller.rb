@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!
   before_action :set_item, only: [:index, :create, :show]
 
   def index
@@ -22,12 +22,6 @@ class OrdersController < ApplicationController
     else
       gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
       render :index, status: :unprocessable_entity
-    end
-  end
-
-  def show
-    if @item.sold_out? || @item.user_id == current_user.id
-      redirect_to root_path
     end
   end
 
