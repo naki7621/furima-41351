@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe OrderAddress, type: :model do
   before do
     @order_address = FactoryBot.build(:order_address)
+    @user = FactoryBot.build(:user)
+    @item = FactoryBot.build(:item)
   end
   describe '購入処理' do
     context '購入できるとき' do
@@ -50,8 +52,18 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include "Phone number can't be blank"
       end
-      it '10桁以上11桁以内の半角数値じゃないと購入できない' do
-        @order_address.phone_number = '123456789012'
+      it '電話番号が11桁以上だと購入ができない' do
+        @order_address.phone_number = '000111122223'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include "Phone number is invalid. Include 10 or 11 digits only"
+      end
+      it '電話番号が9桁以下だと購入ができない' do
+        @order_address.phone_number = '123456789'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include "Phone number is invalid. Include 10 or 11 digits only"
+      end
+      it '電話番号が全角だと購入ができない' do
+        @order_address.phone_number = '０００１１１１２２２２'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include "Phone number is invalid. Include 10 or 11 digits only"
       end
@@ -60,10 +72,10 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("User can't be blank")
       end
-      it 'user_idが空では購入できない' do
-        @order_address.user_id = ''
+      it 'item_idが空では購入できない' do
+        @order_address.item_id = ''
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("User can't be blank")
+        expect(@order_address.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
