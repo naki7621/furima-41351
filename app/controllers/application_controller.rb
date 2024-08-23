@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   def index
   end
-
   private
 
   def basic_auth
