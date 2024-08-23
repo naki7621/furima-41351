@@ -1,13 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:index, :create, :show]
+  before_action :set_item, only: [:index, :create]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-    if user_signed_in? && (@item.sold_out? || @item.user_id == current_user.id)
+    if @item.sold_out? || @item.user_id == current_user.id
       redirect_to root_path
-    elsif !user_signed_in?
-      redirect_to new_user_session_path
     else
       @order_address = OrderAddress.new
     end
